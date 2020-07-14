@@ -12,13 +12,14 @@ class LoginPageLocators():
 
 
 class ProductPageLocators():
-    ADD_TO_BASKET = (By.CSS_SELECTOR, '#add_to_basket_form .btn')
-    MESSAGE_ADD_TO_BASKET = (By.CSS_SELECTOR, '#messages div:nth-child(1)')
-    PRODUCT_NAME = (By.CSS_SELECTOR, 'div.col-sm-6.product_main h1')
-    PRODUCT_IN_BASKET = (By.CSS_SELECTOR, '#messages div:nth-child(1) div strong')
-    MESSAGE_PRICE = (By.CSS_SELECTOR, '.alert.alert-safe.alert-noicon.alert-info.fade.in div p:nth-child(1)')
-    PRICE_PRODUCT = (By.CSS_SELECTOR, 'div.col-sm-6.product_main p.price_color')
-    PRODUCT_PRICE_IN_BASKET = (By.CSS_SELECTOR, '.in div p:nth-child(1) strong')
+    ADD_TO_BASKET = (By.CSS_SELECTOR, '.btn-add-to-basket')
+    MESSAGE_ADD_TO_BASKET = (By.CSS_SELECTOR, '#messages :nth-child(1) div')
+    PRODUCT_NAME = (By.CSS_SELECTOR, '.product_main h1')
+    PRODUCT_IN_BASKET = (By.CSS_SELECTOR, '#messages div:nth-child(1) strong')
+    MESSAGE_PRICE = (By.CSS_SELECTOR, '#messages p:nth-child(1)')
+    PRICE_PRODUCT = (By.CSS_SELECTOR, '#content_inner p.price_color')
+    PRODUCT_PRICE_IN_BASKET = (By.CSS_SELECTOR, '#messages p:nth-child(1) strong')
+
 
 
 
