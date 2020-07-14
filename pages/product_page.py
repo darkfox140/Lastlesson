@@ -14,7 +14,7 @@ class ProductPage(BasePage):
         assert product_name == product_in_basket
 
     def should_be_product_price(self):
-        assert self.is_element_present(*ProductPageLocators.MESSAGE_PRICE), 'Message price is not presented'
+        assert self.is_element_present(*ProductPageLocators.MESSAGE_PRICE), 'Message price is not presented!'
         product_price = self.browser.find_element(*ProductPageLocators.PRICE_PRODUCT).text
         product_price_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_IN_BASKET).text
         assert product_price == product_price_in_basket

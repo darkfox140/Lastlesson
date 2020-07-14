@@ -12,10 +12,10 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.LOGIN_URL)
         login_link = self.browser.find_element(*LoginPageLocators.LOGIN_URL)
         login_link.click()
-        assert self.browser.current_url, "Login link is not found"
+        assert self.browser.current_url, 'Login link is not found'
 
     def should_be_login_form(self):
         assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), 'Login form is not presented'
 
     def should_be_register_form(self):
-        assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Register form is not presented"
+        assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), 'Register form is not presented'
