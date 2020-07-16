@@ -1,6 +1,7 @@
 from .pages.main_page import BasePage
 from .pages.login_page import LoginPage
 from .pages.product_page import ProductPage
+from .pages.basket_page import BasketPage
 import pytest
 
 
@@ -43,6 +44,7 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.should_be_product_price()
 
 
+@pytest.mark.xfail
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
     page = ProductPage(browser, link)
@@ -58,9 +60,26 @@ def test_guest_cant_see_success_message(browser):
     page.should_not_be_success_message()
 
 
+@pytest.mark.xfail
 def test_message_disappeared_after_adding_product_to_basket(browser):
     link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
     page = ProductPage(browser, link)
     page.open()
     page.go_to_product_page()
     page.should_disappear_success_message()
+
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link = 'http://selenium1py.pythonanywhere.com/ru/'
+    page = BasketPage(browser, link)
+    page.open()
+    page.go_to_basket_page()
+    page.quest_open_basket_on_home_page()
+
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    link = 'http://selenium1py.pythonanywhere.com/ru/catalogue/the-girl-who-kicked-the-hornets-nest_199/'
+    page = BasketPage(browser, link)
+    page.open()
+    page.go_to_basket_page()
+    page.quest_open_basket_on_home_page()
