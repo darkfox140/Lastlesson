@@ -19,3 +19,9 @@ class ProductPageLocators():
     MESSAGE_PRICE = (By.CSS_SELECTOR, '#messages p:nth-child(1)')
     PRICE_PRODUCT = (By.CSS_SELECTOR, '#content_inner p.price_color')
     PRODUCT_PRICE_IN_BASKET = (By.CSS_SELECTOR, '#messages p:nth-child(1) strong')
+
+
+class BasketPageLocators():
+    VIEW_BASKET = (By.CSS_SELECTOR, 'span a')
+    ITEMS_IN_BASKET = (By.CSS_SELECTOR, '#basket_formset div')
+    BASKET_EMPTY = (By.CSS_SELECTOR, '#content_inner p')
